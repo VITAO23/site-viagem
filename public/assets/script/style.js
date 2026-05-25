@@ -7,20 +7,17 @@
 //     }
 //   });
 
-var divIcon = document.querySelector('.div-icon');
+document.querySelectorAll('.div-icon').forEach(function(divIcon) {
+  divIcon.addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.1)';
+    this.style.transition = '1s';
+  });
 
-divIcon.addEventListener('mouseover', function() {
-
-  this.style.transform = 'scale(1.1)';
-  this.style.transition = '1s';
+  divIcon.addEventListener('mouseout', function() {
+    this.style.transform = 'none';
+    this.style.transition = '0.7s';
+  });
 });
 
-divIcon.addEventListener('mouseout', function() {
-
-  this.style.transform = 'none';
-  this.style.transition = '0.7s';
-});
 
 
-
-  

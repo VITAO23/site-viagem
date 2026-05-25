@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="stylesheet" href="public/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>Site de viagem</title>
@@ -18,9 +18,9 @@
     <section class="sobre">
         <header class="header-pc">
             <div class="div-icon">
-                <img src="/public/assets/img/logosemfundo-corte.png">
+                <img src="public/assets/img/logosemfundo-corte.png" alt="Logo do site de viagem">
             </div>
-            <nav id="menu">
+            <nav class="menu">
                 <ul>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Destinos</a></li>
@@ -32,10 +32,10 @@
         </header>
         <header class="header-mobile">
             <div class="div-icon">
-                <img src="/public/assets/img/logosemfundo-corte.png">
+                <img src="public/assets/img/logosemfundo-corte.png" alt="Logo do site de viagem">
             </div>
-            <nav id="menu">
-                
+            <nav class="menu">
+
                 <ul>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Destinos</a></li>
@@ -44,8 +44,8 @@
                 </ul>
             </nav>
             <a href=""></a>
-            
-            <button class="button-login"><img src="/public/assets/img/menu-aberto (2).png"></button>
+
+            <button class="button-login" type="button"><img src="public/assets/img/menu-aberto (2).png" alt="Abrir menu"></button>
         </header>
         <div class="sobre-text">
             <h1>Os melhores pacotes, hotéis e atividades para você!</h1>
@@ -58,7 +58,7 @@
         <div class="cards-all">
             <div class="card">
                 <div class="div-img-destinos">
-                    <img width="100%" height="180px" src="/public/assets/img/panagia.jpeg"
+                    <img width="100%" height="180px" src="public/assets/img/panagia.jpeg"
                         alt="Mykonos: Um paraíso no coração do Mar Egeu.">
                 </div>
                 <div class="card-conteudo">
@@ -72,7 +72,7 @@
             </div>
             <div class="card">
                 <div class="div-img-destinos">
-                    <img width="100%" height="180px" src="/public/assets/img/cancun.jpeg"
+                    <img width="100%" height="180px" src="public/assets/img/cancun.jpeg"
                         alt="Cancún: Onde o Caribe encontra o paraíso.">
                 </div>
                 <div class="card-conteudo">
@@ -86,7 +86,7 @@
             </div>
             <div class="card">
                 <div class="div-img-destinos">
-                    <img src="/public/assets/img/paris.jpg" alt="Paris: A cidade do amor e da luz.">
+                    <img src="public/assets/img/paris.jpg" alt="Paris: A cidade do amor e da luz.">
                 </div>
                 <div class="card-conteudo">
                     <h1>París</h1>
@@ -99,7 +99,7 @@
             </div>
             <div class="card">
                 <div class="div-img-destinos">
-                    <img src="/public/assets/img/barcelona.jpeg" alt="Barcelona: Uma cidade cheia de cores e sabores.">
+                    <img src="public/assets/img/barcelona.jpeg" alt="Barcelona: Uma cidade cheia de cores e sabores.">
                 </div>
                 <div class="card-conteudo">
                     <h1>Barcelona</h1>
@@ -177,7 +177,7 @@
 
     </div>
 
-    <form id="contatos" class="reservar-pacote" action="/src/views/processaFormulario.php" method="post">
+    <form id="contatos" class="reservar-pacote" action="processaFormulario.php" method="post">
         <div class="title-form">
             <h3>Gostaria de reservar algum pacote?</h3>
         </div>
@@ -203,8 +203,8 @@
                     <label for="mexico">Mexico/Cancún</label>
                 </div>
                 <div>
-                    <input type="radio" id="eua" name="pacote" value="eua" required>
-                    <label for="frança">França/Paris</label>
+                    <input type="radio" id="franca" name="pacote" value="franca" required>
+                    <label for="franca">França/Paris</label>
                 </div>
                 <div>
                     <input type="radio" id="espanha" name="pacote" value="espanha" required>
@@ -219,13 +219,8 @@
             <label for="mensagem">Algum outro destino:</label>
             <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
             <div>
-                <label for="newsletter">Desejo receber informações por e-mail:</label>
-                <div>
-                    <input type="checkbox" id="newsletter" name="newsletter" value="sim">
-                    <label for="newsletter">Sim</label>
-                    <input type="checkbox" id="newsletter" name="newsletter" value="sim">
-                    <label for="newsletter">Não</label>
-                </div>
+                <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+                <label for="newsletter">Desejo receber informações por e-mail</label>
             </div>
             <div class="div-label-input">
                 <button class="enviar" type="submit">Enviar</button>
@@ -239,7 +234,7 @@
     <div class="locais">
         <div class="cidades_paises">
             <div>
-                <img src="/public/assets/img/panagia.jpeg" alt="Igreja de Panagia Paraportiani, Mykonos" width="100%"
+                <img src="public/assets/img/panagia.jpeg" alt="Igreja de Panagia Paraportiani, Mykonos" width="100%"
                     height="180px">
             </div>
             <h4>Mykonos</h4>
@@ -255,7 +250,7 @@
 
         <div class="cidades_paises">
             <div>
-                <img src="/public/assets/img/cancun.jpeg" alt="Cáncun, México" width="100%" height="180px">
+                <img src="public/assets/img/cancun.jpeg" alt="Cáncun, México" width="100%" height="180px">
             </div>
             <h4>Cancún</h4>
             <h5>México</h5>
@@ -270,7 +265,7 @@
 
         <div class="cidades_paises">
             <div>
-                <img src="/public/assets/img/paris.jpg" alt="">
+                <img src="public/assets/img/paris.jpg" alt="Paris, França">
             </div>
 
             <h4>Paris</h4>
@@ -288,7 +283,7 @@
         </div>
         <div id="barcelona" class="cidades_paises">
             <div>
-                <img src="/public/assets/img/barcelona.jpeg" alt="Barcelona, Espanha" width="250" height="200">
+                <img src="public/assets/img/barcelona.jpeg" alt="Barcelona, Espanha" width="250" height="200">
             </div>
             <h4>Barcelona</h4>
             <h5>Espanha</h5>
@@ -302,7 +297,7 @@
                 <div>
                     <p>GRÁTIS</p>
                 </div>
-                <img src="/public/assets/img/barcelona.jpeg" alt="Barcelona, Espanha" width="100%" height="180px">
+                <img src="public/assets/img/barcelona.jpeg" alt="Barcelona, Espanha" width="100%" height="180px">
                 <h4>Barcelona</h4>
                 <h5>Espanha</h5>
                 <p>Barcelona, capital cosmopolita da região da Catalunha na Espanha, é conhecida pela sua arte e
@@ -518,7 +513,7 @@
     </div>
     <footer>
         <div class="all-name-footer">
-            <img src="/public/assets/img/logosemfundo-corte.png" alt="">
+            <img src="public/assets/img/logosemfundo-corte.png" alt="Logo do site de viagem">
             <div class="name-footer">
                 <a>Victor Hugo</a>
                 <a>Camilla Aparecida Monteiro</a>
@@ -530,8 +525,7 @@
     <div id="copyright">
         <p>Copyright ©2024 SITE VIAGEM. Todos os direitos reservados | Desenvolvido por estudantes </p>
     </div>
-    <script src="/public/assets/script/style.js"></script>
-    <script src="/public/assets/script/validacao.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="public/assets/script/style.js"></script>
+    <script src="public/assets/script/validacao.js"></script>
 </body>
 </html>

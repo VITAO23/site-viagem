@@ -1,9 +1,12 @@
 {
   "name": "site-viagem",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "php -S localhost:8000",
+    "lint:php": "php -l processaFormulario.php",
+    "test": "npm run lint:php"
   },
   "repository": {
     "type": "git",

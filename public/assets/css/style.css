@@ -73,7 +73,7 @@ nav ul li a:hover {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.144)), url(/public/assets/img/praia-sobre.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.144)), url(../img/praia-sobre.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -294,7 +294,7 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0.5rem;
-    background-image: url(/public/assets/img/franca.jpg)
+    background-image: url(../img/franca.jpg)
 
 }
 
@@ -552,7 +552,7 @@ footer {
     display: flex;
     align-items: center;
     align-items: center;
-    
+
 }
 .all-name-footer{
     display: flex;
@@ -575,7 +575,7 @@ footer {
     font-size: 1rem;
 }
 #copyright{
-    background-color: rgba(75, 75, 75, 0.8); 
+    background-color: rgba(75, 75, 75, 0.8);
     height: 1.5rem;
     display: flex;
     align-items: center;
@@ -586,13 +586,13 @@ footer {
 
 @media screen and (max-width: 800px){
 
-    
-    
+
+
 }
 @media screen and (max-width: 747px){
 
-    
-    
+
+
     #copyright{
         height: 10%;
     }
@@ -606,7 +606,7 @@ form{
     background-color: #4CAF50;
     width: 100%;
     padding: 2rem 2rem;
-    
+
 }
 
 footer{
@@ -627,8 +627,8 @@ footer{
 }
 @media screen and (max-width: 480px){
 
-    
-    
+
+
     #sobre{
         height: 120vhh;
     }

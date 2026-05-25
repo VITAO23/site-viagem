@@ -1,28 +1,46 @@
 <?php
-$servername = "https://databases.000webhost.com/index.php?route=/database/structure&server=1&db=id22247061_viagem&table=bd_viagem";
-$username = "id22247061_grupo";
-$password = "Trabalho2024@";
-$dbname = "id22247061_viagem";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  http_response_code(405);
+  exit('Método não permitido.');
+}
+
+$servername = getenv('DB_HOST') ?: 'localhost';
+$username = getenv('DB_USER') ?: 'id22247061_grupo';
+$password = getenv('DB_PASSWORD') ?: 'Trabalho2024@';
+$dbname = getenv('DB_NAME') ?: 'id22247061_viagem';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+  http_response_code(500);
+  exit('Falha na conexão com o banco de dados.');
 }
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$pacote = $_POST['pacote'];
-$mensagem = $_POST['mensagem'];
-$newsletter = $_POST['newsletter'];
+$nome = trim($_POST['nome'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$pacote = trim($_POST['pacote'] ?? '');
+$mensagem = trim($_POST['mensagem'] ?? '');
+$newsletter = isset($_POST['newsletter']) && $_POST['newsletter'] === 'sim' ? 'sim' : 'nao';
 
-$stmt = $conn->prepare("INSERT INTO Reservas (nome, email, pacote, mensagem, newsletter) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $nome, $email, $pacote, $mensagem, $newsletter);
+if ($nome === '' || $email === '' || $pacote === '') {
+  http_response_code(400);
+  exit('Campos obrigatórios não informados.');
+}
+
+$stmt = $conn->prepare('INSERT INTO Reservas (nome, email, pacote, mensagem, newsletter) VALUES (?, ?, ?, ?, ?)');
+
+if (!$stmt) {
+  http_response_code(500);
+  exit('Falha ao preparar a consulta.');
+}
+
+$stmt->bind_param('sssss', $nome, $email, $pacote, $mensagem, $newsletter);
 
 if ($stmt->execute()) {
-  echo "Novo registro criado com sucesso";
+  echo 'Novo registro criado com sucesso';
 } else {
-  echo "Error: " . $stmt->error;
+  http_response_code(500);
+  echo 'Erro ao salvar a reserva.';
 }
 
 $stmt->close();
