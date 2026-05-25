@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$servername = "https://databases.000webhost.com/index.php?route=/database/structure&server=1&db=id22247061_viagem&table=bd_viagem";
+$username = "id22247061_grupo";
+$password = "Trabalho2024@";
+$dbname = "id22247061_viagem";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

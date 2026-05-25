@@ -1,9 +1,9 @@
 document.getElementById('contatos').addEventListener('submit', function(event) {
-    var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email').value;
-    var pacote = document.querySelector('input[name="pacote"]:checked');
-    var mensagem = document.getElementById('mensagem').value;
-    var newsletter = document.querySelector('input[name="newsletter"]:checked');
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const pacote = document.querySelector('input[name="pacote"]:checked');
+    const mensagem = document.getElementById('mensagem').value;
+    const newsletter = document.querySelector('input[name="newsletter"]:checked');
   
     if(nome === '' || email === '' || !pacote || (newsletter.value === 'sim' && mensagem === '')) {
         alert('Por favor, preencha todos os campos obrigatórios.');
@@ -15,17 +15,16 @@ document.getElementById('contatos').addEventListener('submit', function(event) {
   });
   
   function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-
 
   $(document).ready(function() {
     $('#contatos').on('submit', function(event) {
         event.preventDefault();
 
         $.ajax({
-            url: '/src/views/processaFormulario.php',
+            url: 'processaFormulario.php',
             type: 'post',
             data: $('#contatos').serialize(),
             success: function() {
